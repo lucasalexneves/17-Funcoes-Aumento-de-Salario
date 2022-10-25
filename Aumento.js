@@ -23,9 +23,25 @@ salário R$1.000,00 aumento de 15%
 1000 * 1.15 = 1150
 ATENÇÃO!! Faça um commit para cada item do exercício. */
 
+var ajusteSalario = 0
+
 function NomeSalario (name, salary){
     var nome = prompt("Digite o seu nome:")
     var salario = parseFloat(prompt("Digite o seu salário:"))
     return nome
     return salario
+}
+
+function aumentoSalario (){
+    if (salario <= 1500){
+        ajusteSalario = salario * 1.20
+    } else if (salario >= 1501 && salario <= 2000){
+        ajusteSalario = salario * 1.15
+    } else if (salario >= 2001 && salario <= 3000){
+        ajusteSalario = salario * 1.10
+    } else if (salario >= 3001){
+        ajusteSalario = salario * 1.05 
+    }
+
+    return ajusteSalario
 }
