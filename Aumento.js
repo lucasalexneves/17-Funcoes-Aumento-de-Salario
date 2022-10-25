@@ -25,7 +25,9 @@ ATENÇÃO!! Faça um commit para cada item do exercício. */
 
 var nome = ""
 var salary = 0
+var salaryAjustado = 0
 var continuar = "s"
+var porcentagemSalario = ""
 
 function AskName(){
     nome = prompt("Digite o nome do colaborador:")
@@ -35,13 +37,17 @@ function AskName(){
 function AskSalary(){
     salary = parseFloat(prompt("Digite o salário do Colaborador:"))
     if(salary <= 1500){
-        salary = salary * 1.20
+        salaryAjustado = salary * 1.20
+        porcentagemSalario = "20%"
     } else if (salary >= 1501 && salary <= 2000){
-        salary = salary * 1.15
+        salaryAjustado = salary * 1.15
+        porcentagemSalario = "15%"
     } else if (salary >= 2001 && salary <= 3000){
-        salary = salary * 1.10
+        salaryAjustado = salary * 1.10
+        porcentagemSalario = "10%"
     } else if (salary >= 3001){
-        salary = salary * 1.05
+        salaryAjustado = salary * 1.05
+        porcentagemSalario = "5%"
     }
 
     return salary
@@ -57,7 +63,7 @@ while (continuar == "s"){
     AskSalary()
     AskContinue()
 
-    console.log("O nome do colaborador é: ", nome, " e seu salário já com aumento é: ", salary)
+    console.log("O nome do colaborador é: ", nome, " e seu salário é: ", salary, ". O aumento de seu salário foi de: ", porcentagemSalario, " e seu salário reajustado foi: ", salaryAjustado)
 }
 
 
